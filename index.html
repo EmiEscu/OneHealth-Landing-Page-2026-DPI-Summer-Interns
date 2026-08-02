@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Health Learning Lab | University of Illinois</title>
+  <meta name="description" content="An interdisciplinary program teaching K-12 and undergraduate students how human, animal, and environmental health connect.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Newsreader (headings) + Inter (body) — see README > Design Tokens -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Lets keyboard/screen-reader users jump past the nav (a11y checklist) -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================================================
+       SITE HEADER / NAV  (shared across all 4 pages)
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+
+      <a class="brand" href="index.html">
+        <!-- TODO: replace with real logo from assets/icons/ once provided -->
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__name">One Health Learning Lab</span>
+          <span class="brand__org">University of Illinois</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="primary-nav__list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="curriculum.html">Curriculum Modules</a></li>
+          <li><a href="interactive-center.html">Interactive Center</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         1. HERO — "Mission & Vision"
+         ============================================================ -->
+    <section class="hero section--dark" id="hero">
+      <div class="container hero__inner">
+
+        <div class="hero__content">
+          <p class="eyebrow">University of Illinois</p>
+          <h1 class="hero__title">
+            <span class="hero__title-underline">Mission</span> &amp;
+            <em class="hero__title-accent">Vision</em>
+          </h1>
+          <p class="hero__lede">
+            An interdisciplinary pilot program placing graduate scholars alongside
+            faculty mentors to advance human, animal, and environmental health
+            research across Illinois communities.
+          </p>
+          <div class="button-row">
+            <a class="btn btn--accent" href="interactive-center.html">Interactive Data</a>
+            <a class="btn btn--outline-light" href="curriculum.html">Explore Programs</a>
+          </div>
+        </div>
+
+        <!-- Decorative shape in the wireframe; swap for real imagery when available -->
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__circle"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. ABOUT US
+         ============================================================ -->
+    <section class="section about" id="about">
+      <div class="container about__inner">
+
+        <div class="about__content">
+          <h2 class="section-title">About Us</h2>
+          <p class="about__lede">
+            We believe that the health of people, animals, and the environment are
+            deeply connected. Our program is built to foster interdisciplinary
+            collaboration among students, with a focus on
+          </p>
+
+          <dl class="pillar-list">
+            <div class="pillar">
+              <dt class="pillar__term">Breaking Down Silos:</dt>
+              <dd class="pillar__desc">
+                Uniting medicine, veterinary science, environmental science, and
+                public health into a single problem-solving framework.
+              </dd>
+            </div>
+            <div class="pillar">
+              <dt class="pillar__term">Proactive Prevention:</dt>
+              <dd class="pillar__desc">
+                Training students to address global challenges like zoonoses,
+                pollution, and antimicrobial resistance before they escalate.
+              </dd>
+            </div>
+            <div class="pillar">
+              <dt class="pillar__term">Interactive Mastery:</dt>
+              <dd class="pillar__desc">
+                Utilizing case-based learning, disease spread simulations, and
+                real-world data analytics to turn theory into practice.
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- TODO: replace placeholder with real photo -> assets/images/ -->
+        <div class="about__visual media-placeholder" role="img"
+             aria-label="Placeholder for program photography">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. ONE HEALTH IN EVERYDAY LIFE — dashboard teaser
+         Links out to the full Interactive Center page.
+         ============================================================ -->
+    <section class="section everyday" id="everyday-life">
+      <div class="container">
+
+        <header class="everyday__header">
+          <h2 class="section-title section-title--center">
+            One Health in <em>Everyday Life</em>
+          </h2>
+          <p class="everyday__lede">
+            Visualization of how One Health affect all 3 core pillars of health
+            through real world disease outbreaks
+          </p>
+        </header>
+
+        <!-- Static teaser only. The live/interactive version lives on
+             interactive-center.html — this is a preview that links there. -->
+        <div class="dashboard-teaser">
+          <p class="dashboard-teaser__label">Disease</p>
+
+          <ul class="dashboard-teaser__tabs">
+            <li class="is-active">Human Outbreak</li>
+            <li>Animal Recorded Cases</li>
+            <li>Environmental Records</li>
+          </ul>
+
+          <!-- TODO: swap for the real map/data visual -->
+          <div class="dashboard-teaser__figure media-placeholder media-placeholder--dark"
+               role="img" aria-label="Placeholder for the One Health data map">
+          </div>
+
+          <a class="btn btn--accent dashboard-teaser__cta" href="interactive-center.html">
+            Explore Interactive Center
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. CURRENT ROADMAPS — K-12 vs Undergrad teaser
+         Full detail lives on curriculum.html; this is the comparison preview.
+         ============================================================ -->
+    <section class="section roadmaps" id="roadmaps">
+      <div class="container">
+
+        <h2 class="section-title">Current Roadmaps:</h2>
+
+        <div class="roadmaps__grid">
+
+          <!-- ---- High School track ---- -->
+          <article class="roadmap" aria-labelledby="roadmap-hs-title">
+            <h3 class="roadmap__title" id="roadmap-hs-title">High School Student</h3>
+
+            <!-- NOTE: the wireframe shows a placeholder here, not real steps —
+                 the high school roadmap content hasn't been designed yet.
+                 Mirror the undergrad <ol> structure below once it exists. -->
+            <div class="roadmap__placeholder media-placeholder media-placeholder--accent"
+                 role="img" aria-label="High school roadmap — coming soon">
+            </div>
+
+            <a class="btn btn--accent" href="curriculum.html#high-school-lab">
+              High School Lab
+            </a>
+          </article>
+
+          <!-- ---- Undergraduate track ---- -->
+          <article class="roadmap" aria-labelledby="roadmap-ug-title">
+            <h3 class="roadmap__title" id="roadmap-ug-title">Undergrad Students</h3>
+
+            <ol class="roadmap__steps">
+              <li class="roadmap__step">Intro to One Health</li>
+              <li class="roadmap__step">Data, Dashboards, &amp; Health Equity</li>
+              <li class="roadmap__step">Values and ethics</li>
+              <li class="roadmap__step">Systems Thinking</li>
+              <li class="roadmap__step">Capstone Project: Proposing Change</li>
+            </ol>
+
+            <a class="btn btn--outline-dark" href="curriculum.html#undergrad-lab">
+              UnderGrad Lab
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. CTA BAND
+         ============================================================ -->
+    <section class="section section--dark cta-band" id="start-learning">
+      <div class="container cta-band__inner">
+
+        <p class="cta-band__kicker">
+          Three kinds of health.<br>
+          <strong>One</strong> unified framework.
+        </p>
+
+        <p class="cta-band__lede">
+          Join a new generation of problem-solvers. Master the systems-thinking
+          skills and data tools needed to stop global health threats before they start.
+        </p>
+
+        <!-- Deliberately points at the curriculum, not a sign-up form: users
+             should see what the program involves before registering. -->
+        <a class="btn btn--accent" href="curriculum.html">Start Learning</a>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. FAQ
+         <details>/<summary> gives us a keyboard-accessible accordion
+         with zero JavaScript.
+         ============================================================ -->
+    <section class="section faq" id="faq">
+      <div class="container">
+
+        <h2 class="section-title">FAQ</h2>
+
+        <div class="faq__list">
+
+          <details class="faq__item">
+            <summary class="faq__question">Who is the intended audience?</summary>
+            <div class="faq__answer">
+              <!-- TODO: real answer copy pending -> docs/content/ -->
+              <p>
+                High school and undergraduate students interested in how human,
+                animal, and environmental health connect — plus the educators and
+                mentors supporting them.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">What exactly will I learn in this program?</summary>
+            <div class="faq__answer">
+              <!-- TODO: real answer copy pending -> docs/content/ -->
+              <p>
+                See the <a href="curriculum.html">Curriculum Modules</a> page for the
+                full roadmap of each track.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item" open>
+            <summary class="faq__question">How are interactive games used?</summary>
+            <div class="faq__answer">
+              <ul class="faq__bullets">
+                <li>
+                  <strong>Live Data Dashboard:</strong>
+                  Track real-time disease surveillance.
+                </li>
+                <li>
+                  <strong>Outbreak Simulations:</strong>
+                  Act as an epidemiologist making active containment tradeoffs.
+                </li>
+                <li>
+                  <strong>Resource Games:</strong>
+                  Strategize and allocate budgets to prevent the next global pandemic.
+                </li>
+              </ul>
+              <p class="faq__flourish">
+                Real data. Real simulations. <strong>Real solutions.</strong>
+              </p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. COMMUNITY IMPACT
+         ============================================================ -->
+    <section class="section section--dark impact" id="community-impact">
+      <div class="container impact__inner">
+
+        <p class="eyebrow eyebrow--light">From research discovery to community impact</p>
+        <hr class="impact__rule">
+
+        <h2 class="impact__title">
+          Transforming knowledge <em>into</em> community impact.
+        </h2>
+
+        <p class="impact__lede">
+          Explore the people and partners behind the 2026 cohort, or connect with
+          the program team to get involved.
+        </p>
+
+        <!-- These four have no equivalent page on this site, so they link out
+             to the live One Health Scholars site, which already hosts them. -->
+        <div class="impact__actions">
+          <a class="btn btn--accent"
+             href="https://gihri.github.io/one-health-scholars/students.html">
+            Meet the Scholars
+          </a>
+          <a class="btn btn--outline-light"
+             href="https://gihri.github.io/one-health-scholars/faculty.html">
+            Meet the Faculty
+          </a>
+          <a class="btn btn--outline-light"
+             href="https://gihri.github.io/one-health-scholars/lhd.html">
+            Meet the Health Departments
+          </a>
+          <!-- TODO: confirm — "Partner with Us" has no obvious page on the live
+               site; contact.html is the closest fit. -->
+          <a class="btn btn--outline-light"
+             href="https://gihri.github.io/one-health-scholars/contact.html">
+            Partner with Us
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       SITE FOOTER  (shared across all 4 pages)
+       ============================================================ -->
+  <footer class="site-footer section--dark">
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__brand">
+        <p class="site-footer__name">One Health Learning Labs</p>
+        <p class="site-footer__legal">
+          &copy; 2026 Illinois One Health Learning Labs Program. All rights reserved.
+        </p>
+      </div>
+
+      <!-- TODO: replace with real social icons -> assets/icons/ -->
+      <ul class="site-footer__social" aria-label="Social media">
+        <li><a href="#" class="media-placeholder media-placeholder--small"><span class="sr-only">Social link 1</span></a></li>
+        <li><a href="#" class="media-placeholder media-placeholder--small"><span class="sr-only">Social link 2</span></a></li>
+        <li><a href="#" class="media-placeholder media-placeholder--small"><span class="sr-only">Social link 3</span></a></li>
+      </ul>
+
+      <nav class="site-footer__links" aria-label="Footer">
+        <h2 class="site-footer__links-title">Links</h2>
+        <!-- Team / Faculty / Project don't exist on this site, so they point at
+             the live One Health Scholars site. Home and Contact Us stay internal
+             — we have our own versions of both. -->
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="https://gihri.github.io/one-health-scholars/team.html">Team</a></li>
+          <li><a href="https://gihri.github.io/one-health-scholars/faculty.html">Faculty</a></li>
+          <li><a href="https://gihri.github.io/one-health-scholars/project.html">Project</a></li>
+          <li><a href="support.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
