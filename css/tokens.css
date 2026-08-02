@@ -1,0 +1,70 @@
+/*
+  Design tokens — DPI One Health Landing Page
+  Source of truth: Figma (see README.md > Design). Brand colors below are
+  pulled directly from the README's Design Tokens table. Anything marked
+  "proposed" is NOT in Figma yet — it fills a gap the wireframes don't
+  cover (hover/focus/error states) and should be confirmed against Figma
+  or with the design owner before it's treated as final.
+*/
+
+:root {
+  /* ---- Brand colors (confirmed — from README) ---- */
+  --color-primary: #13294B;             /* navy — header, hero, footer, dark section backgrounds */
+  --color-secondary: #FFFFFF;           /* white */
+  --color-accent: #E84A27;              /* orange — buttons, CTAs, links, module cards */
+
+  /* One Health pillar colors (confirmed — from README) */
+  --color-human-domain: #C2453B;
+  --color-animal-domain: #C98A2B;
+  --color-environment-domain: #3E7C59;
+
+  /* ---- Text (proposed) ----
+     Body copy in the wireframes (module descriptions, arcade blurbs) reads
+     as a dark neutral, not the brand navy — using navy for paragraph text
+     site-wide would be too heavy and hurts contrast/readability at body size. */
+  --color-text: #1A1A1A;                /* default body text on light backgrounds */
+  --color-text-muted: #6B7280;          /* secondary text — subtitles, inactive tab labels
+                                            (e.g. the grayed-out "Animal Recorded Cases" /
+                                            "Environmental Records" tabs on the Interactive
+                                            Center dashboard) */
+  --color-text-inverse: #FFFFFF;        /* text on navy/dark backgrounds */
+
+  /* ---- Backgrounds (proposed, semantic aliases) ----
+     Same two brand colors as above, renamed by role so section markup reads
+     as intent ("this is a dark band") rather than a raw color name. */
+  --color-bg: #FFFFFF;                  /* default page background */
+  --color-bg-dark: var(--color-primary);/* navy full-bleed sections: header, hero, footer, CTA bands */
+  --color-surface: #FFFFFF;             /* raised elements on a light bg, e.g. the Contact form card —
+                                            same hex as --color-bg today but themed separately so a
+                                            future shadow/border treatment doesn't have to touch --color-bg */
+
+  /* ---- Borders (proposed) ----
+     Visible in the Support page form: input fields have a light gray
+     border, not navy or orange. */
+  --color-border: #D1D5DB;
+
+  /* ---- Interactive states (proposed) ----
+     The wireframes show buttons in one flat color only — hover/active/focus
+     states aren't (and can't be) shown in a static Figma frame, but every
+     button needs one. Darkened by ~15% from the base brand color so the
+     state is perceptible without changing the brand hue. */
+  --color-primary-hover: #0D1E38;
+  --color-accent-hover: #C93E1F;
+
+  /* Visible keyboard-focus ring — required by the Accessibility checklist
+     in the README ("visible focus indicator on all focusable elements").
+     Reuses the accent color so it stays on-brand instead of introducing a
+     new blue. */
+  --color-focus: var(--color-accent);
+
+  /* ---- Form feedback (proposed) ----
+     The Support/Contact page has a real form (Name, Surname, Email,
+     Message) with a Submit button — it will need success/error states
+     that don't exist in the static wireframe. */
+  --color-success: #1E7D45;
+  --color-error: #B3261E;
+
+  /* ---- Typography (confirmed — from README) ---- */
+  --font-heading: 'Newsreader', serif;
+  --font-body: 'Inter', sans-serif;
+}
