@@ -373,14 +373,14 @@ Checklist before any PR merges:
 
 ## Roadmap
 
-- [ ] <!-- FILL: e.g. Finalize Figma draft -->
-- [ ] <!-- FILL: e.g. Scaffold project + design tokens -->
-- [ ] <!-- FILL: e.g. Build shared layout (header, footer, nav) -->
-- [ ] <!-- FILL: e.g. K-12 program section -->
-- [ ] <!-- FILL: e.g. Undergraduate program section -->
-- [ ] <!-- FILL: e.g. Responsive pass -->
-- [ ] <!-- FILL: e.g. Accessibility audit -->
-- [ ] <!-- FILL: e.g. Deploy to production -->
+- [x] Finalize Figma draft 
+- [x] Scaffold project + design tokens 
+- [ ] Build shared layout (header, footer, nav) 
+- [ ] K-12 program section 
+- [ ] Undergraduate program section 
+- [ ] Responsive pass 
+- [ ] Accessibility audit 
+- [ ] Deploy to production 
 
 ---
 
