@@ -18,7 +18,8 @@ The public landing page for the DPI One Health program — introducing One Healt
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
-  - [Open Questions](#open-questions-from-the-latest-wireframe-review)
+  - [Resolved decisions](#resolved-decisions-from-the-wireframe-review)
+  - [Still open](#still-open)
 - [Design](#design)
 - [Content](#content)
 - [Accessibility](#accessibility)
@@ -72,7 +73,10 @@ This site serves distinct audiences with different reading levels, goals, and ca
 | K-12 students | Simple explanation of One Health, fun/visual examples, sense of "this could be for me" | "Join the High School Network" (or "Start Your One Health Journey") | Playful, ~5th–7th grade reading level, short sentences |
 | Undergraduate students | What does the program actually involve, credit/time commitment, how do I apply | "Join the Undergrad Network" (or "Start Your One Health Journey") | Serious and Actionable, Under Grad reading level, short sentences |
 
-> **Confirmed from Figma:** "High School Lab" and "Undergraduate Lab" (seen as quick-nav buttons in the Curriculum page hero, and again as headings on `curriculum.html`) are navigation into each track's section — not the sign-up action. The actual registration CTAs are the buttons at the end of each track's section: "Join the High School Network" / "Start Your One Health Journey" for K-12, and "Join the Undergrad Network" / "Start Your One Health Journey" for Undergrad. **Open question:** where do these buttons actually link to — see [Open Questions](#open-questions-from-the-latest-wireframe-review) below.
+> **Confirmed from Figma:** "High School Lab" and "Undergraduate Lab" (seen as quick-nav buttons in the Curriculum page hero, and again as headings on `curriculum.html`) are navigation into each track's section — not the sign-up action. The actual registration CTAs are the buttons at the end of each track's section: "Join the High School Network" / "Start Your One Health Journey" for K-12, and "Join the Undergrad Network" / "Start Your One Health Journey" for Undergrad. 
+
+
+**Where these buttons link:** `curriculum.html` — deliberately the curriculum rather than a sign-up form, so students see what the program involves before committing. See [Resolved decisions](#resolved-decisions-from-the-wireframe-review).
 
 **How the two tracks are separated in the UI:** Both K-12 and Undergraduate content live on the same page — [`curriculum.html`](#project-structure) — each occupying its own section ("High School Lab" and "Undergrad Lab"). They are not separate routes/pages. See [Project Structure](#project-structure) for the full page/section breakdown.
 
@@ -190,8 +194,6 @@ OneHealth-Landing-Page-2026-DPI-Summer-Interns/
 └── README.md
 ```
 
-> File names `interactive-center.html` and `support.html` are proposed to match the nav bar labels ("INTERACTIVE CENTER," "SUPPORT") — confirm or rename before building.
-
 **Page → section breakdown** (confirmed against the actual Figma exports in `docs/design/`):
 
 | Page | Sections |
@@ -201,11 +203,31 @@ OneHealth-Landing-Page-2026-DPI-Summer-Interns/
 | `interactive-center.html` (Interactive Center) | Hero ("The Interactive Center"), Live Dashboards (Human Outbreak / Animal Recorded Cases / Environmental Records tabs), One Health Arcade (same games as `curriculum.html`), Footer |
 | `support.html` (Support) | Hero ("Have Any Questions?" + FAQ button), Contact form (Name, Surname, Email, Message, Submit) |
 
-**Open questions from the latest wireframe review** — need an answer before these get built:
+### Resolved decisions from the wireframe review
 
-1. **One Health Arcade is duplicated.** The exact same section (Catch the Virus / Eco-System Rescue) appears on both `curriculum.html` and `interactive-center.html`. Intentional (same reusable section on both pages), or should it live in one place with the other page linking to it?
-2. **Footer "Links" don't match the site's 4 pages.** Every page's footer lists: Home, Team, Faculty, Project, Contact Us. "Contact Us" clearly maps to `support.html`, but **Team**, **Faculty**, and **Project** don't correspond to any of the four confirmed pages. Same question applies to the Home page's "Meet the Scholars / Meet the Faculty / Meet the Health Departments / Partner with Us" button row — are these future pages not designed yet, anchor sections on an existing page, or placeholder links?
-3. **Where do the registration CTAs actually go?** "Start Your One Health Journey," "Join the High School Network," "Join the Undergrad Network" — external site (per [What this repo is not](#about-the-project) → not the registration portal), or somewhere within this site?
+1. **One Health Arcade / Live Dashboards are duplicated on purpose.** Both appear on `curriculum.html` and `interactive-center.html`. The Interactive Center is intentionally the one page that gathers every interactive section of the site in a single place; the copies on other pages are teasers pointing into it.
+2. **Links with no page on this site point to the live One Health Scholars site** — <https://gihri.github.io/one-health-scholars/>, which already hosts them:
+
+   | Link on this site | Destination |
+   |---|---|
+   | Footer → Team | `.../team.html` |
+   | Footer → Faculty | `.../faculty.html` |
+   | Footer → Project | `.../project.html` |
+   | Footer → Home | `index.html` (this site) |
+   | Footer → Contact Us | `support.html` (this site) |
+   | Meet the Scholars | `.../students.html` ("Student Ambassadors," 2026 cohort) |
+   | Meet the Faculty | `.../faculty.html` |
+   | Meet the Health Departments | `.../lhd.html` ("Partner Health Departments") |
+   | Partner with Us | `.../contact.html` — ⚠️ best guess, no dedicated partner page exists; confirm |
+
+3. **Registration CTAs point to `curriculum.html`, not a sign-up form.** "Start Learning," "Join the High School Network," and "Join the Undergrad Network" all route to the curriculum so prospective students understand the program before committing. The external registration portal is still out of scope for this repo.
+4. **Filenames confirmed:** `index.html`, `curriculum.html`, `interactive-center.html`, `support.html` — matching the nav labels shown in the address bar.
+
+### Still open
+
+- **High School roadmap content** — not yet supplied by the program team; `index.html` and `curriculum.html` both carry a visual placeholder until it exists.
+- **Brand assets** — logo, section photography, dashboard map visual, and the three footer social icons are all placeholders pending real files in `assets/`.
+- **Breakpoint values** — see [Design → Breakpoints](#design); `styles.css` currently uses a provisional 900px.
 
 ### Where things go
 
@@ -230,8 +252,6 @@ OneHealth-Landing-Page-2026-DPI-Summer-Interns/
 
 ### Design tokens
 
-<!-- FILL: Pull these straight out of Figma's styles panel so devs never eyedrop
-     a screenshot. -->
 
 **Colors**
 
