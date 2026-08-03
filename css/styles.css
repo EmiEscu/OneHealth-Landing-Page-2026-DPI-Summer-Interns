@@ -99,6 +99,7 @@ a { color: inherit; }
 }
 .media-placeholder--dark  { background: rgba(255, 255, 255, 0.08); }
 .media-placeholder--accent{ background: var(--color-accent); }
+.media-placeholder--navy  { background: var(--color-primary); }
 .media-placeholder--small { min-height: 0; width: 64px; height: 64px; }
 
 /* ---------- Buttons ---------- */
@@ -552,6 +553,247 @@ a { color: inherit; }
 .site-footer__links a { text-decoration: none; opacity: 0.85; }
 .site-footer__links a:hover { opacity: 1; color: var(--color-accent); }
 
+/* ============================================================
+   CURRICULUM PAGE
+   ============================================================ */
+
+/* ---------- Curriculum hero ---------- */
+
+/* No overflow:hidden — the sphere is meant to spill past the navy band into
+   the section below, which is what creates the separation effect. z-index
+   lifts the whole hero above the following section so the spill stays visible. */
+.curriculum-hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: clamp(4rem, 12vw, 10.5rem);
+  padding-bottom: 0;
+}
+
+/* Large orange sphere behind the hero text. Anchored to the TOP of the section
+   (not centred) so a fixed portion of it hangs below the navy band. */
+.curriculum-hero__circle {
+  position: absolute;
+  left: 50%;
+  top: 3rem;
+  transform: translateX(-50%);
+  width: min(88vw, 700px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    var(--color-accent) 0%,
+    var(--color-accent-deep) 85%
+  );
+  pointer-events: none; /* decorative — must never block a click */
+}
+
+.curriculum-hero__content { position: relative; } /* keeps text above the sphere */
+
+.curriculum-hero__kicker {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(1rem, 1.6vw, 1.375rem);
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* max-width forces the two-line break after "your", as in the design */
+.curriculum-hero__title {
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  max-width: 10em;
+  margin: clamp(2.5rem, 6.5vw, 5.5rem) auto clamp(2rem, 4vw, 3rem);
+}
+
+/* Two columns. Row 1 (outline buttons) fills the column; row 2 (accent
+   buttons) is narrower but shares the same column centres. */
+.curriculum-hero__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 22rem));
+  gap: 1rem 6.5rem;
+  justify-content: center;
+  margin-bottom: -0.75rem; /* slight overhang past the navy band */
+}
+.curriculum-hero__actions .btn { width: 100%; }
+.curriculum-hero__actions .btn--accent {
+  width: 14.5rem;
+  justify-self: center;
+}
+
+/* ---------- Lab sections (High School / UnderGrad) ---------- */
+
+.lab__title { font-size: clamp(2.5rem, 6vw, 3.5rem); }
+
+/* Decorative "One Health" script above each roadmap */
+.lab__script {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--color-primary);
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* ---------- Module roadmap ----------
+   NOTE: the Figma shows these connected by a hand-drawn winding curve.
+   This is a simplified zigzag — modules alternate sides — which reads the
+   same way without an SVG path. Revisit if the curve is essential. */
+
+.module-track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.module { max-width: 34rem; }
+.module:nth-child(even) { margin-left: auto; text-align: right; }
+
+.module__name {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  font-style: italic;
+  font-size: 1.125rem;
+  padding: 0.85rem 2rem;
+  margin: 0 0 0.85rem;
+}
+
+.module__desc { margin: 0; }
+
+.module--capstone .module__name::before {
+  content: "\2605"; /* ★ */
+  margin-right: 0.5rem;
+}
+
+/* ---------- One Health Arcade ---------- */
+
+.arcade__lede {
+  font-style: italic;
+  font-size: 1.125rem;
+  margin: 0 0 3rem;
+}
+
+.arcade__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+.game + .game {
+  border-left: 2px solid var(--color-primary);
+  padding-left: 3rem;
+}
+
+.game__title {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  text-align: left;
+  margin: 0;
+}
+
+.game__figure {
+  width: 100%;
+  min-height: 260px;
+  border-radius: 0;
+}
+
+.game__desc {
+  margin: 0;
+  border-top: 1px solid var(--color-primary);
+  padding-top: 1.5rem;
+}
+
+.game .btn { align-self: center; }
+
+/* ---------- Benefit / career bands ---------- */
+
+.benefits__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 1rem;
+}
+.benefits__title--serif { text-align: center; }
+
+.benefits__rule {
+  width: min(320px, 60%);
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 1rem auto 2.5rem;
+}
+
+.benefits__lede {
+  font-size: 1.125rem;
+  max-width: 52ch;
+  margin: 0 0 3rem;
+}
+
+/* White callout box in the Career Advantages band */
+.benefits__quote {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  text-align: center;
+  padding: 2rem;
+  max-width: 56rem;
+  margin: 0 auto 3rem;
+}
+
+.benefit-cards {
+  list-style: none;
+  margin: 0 0 3rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.benefit-card {
+  background: var(--color-accent);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.benefit-card__icon {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  margin: 0 auto 1.5rem;
+}
+
+.benefit-card__title {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+.benefit-card__title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: currentColor;
+  margin: 0.75rem auto 0;
+}
+
+.benefit-card__desc {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.button-row--center { justify-content: center; }
+
 /* ---------- Responsive ----------
    TODO: breakpoint values are placeholders — the README's Design > Breakpoints
    table is still blank. Confirm against Figma and keep the two in sync. */
@@ -572,6 +814,32 @@ a { color: inherit; }
   }
 
   .impact__actions { grid-template-columns: 1fr; }
+
+  /* --- Curriculum page --- */
+
+  .curriculum-hero__actions {
+    grid-template-columns: minmax(0, 24rem);
+    gap: 1rem;
+  }
+  .curriculum-hero__actions .btn--accent { width: 100%; }
+
+  .arcade__grid,
+  .benefit-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .game + .game {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 2px solid var(--color-primary);
+    padding-top: 3rem;
+  }
+
+  /* Zigzag collapses to a single left-aligned column on narrow screens */
+  .module:nth-child(even) {
+    margin-left: 0;
+    text-align: left;
+  }
 
   .nav-toggle { display: block; }
 
