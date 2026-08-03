@@ -12,6 +12,7 @@
   --color-primary: #13294B;             /* navy — header, hero, footer, dark section backgrounds */
   --color-secondary: #FFFFFF;           /* white */
   --color-accent: #E84A27;              /* orange — buttons, CTAs, links, module cards */
+  --color-accent-deep: #B82B0C;         /* darker orange — outer stop of the hero sphere gradient */
 
   /* One Health pillar colors (confirmed — from README) */
   --color-human-domain: #C2453B;
