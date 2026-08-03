@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Modules | One Health Learning Lab</title>
+  <meta name="description" content="Explore the High School Lab and Undergraduate Lab learning roadmaps for the One Health program at the University of Illinois.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Newsreader (headings) + Inter (body) — see README > Design Tokens -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================================================
+       SITE HEADER / NAV  (identical across all 4 pages —
+       only aria-current changes)
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+
+      <a class="brand" href="index.html">
+        <!-- TODO: replace with real logo from assets/icons/ once provided -->
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__name">One Health Learning Lab</span>
+          <span class="brand__org">University of Illinois</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="primary-nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="curriculum.html" aria-current="page">Curriculum Modules</a></li>
+          <li><a href="interactive-center.html">Interactive Center</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         1. HERO — "Ready to Begin your learning?"
+         Doubles as quick-nav into the two lab sections below.
+         ============================================================ -->
+    <section class="curriculum-hero section--dark" id="hero">
+
+      <!-- Orange sphere. Sits behind the text and deliberately spills past the
+           bottom of the navy band into the section below. -->
+      <div class="curriculum-hero__circle" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="curriculum-hero__content">
+          <p class="curriculum-hero__kicker">One framework. One Health. One world.</p>
+          <h1 class="curriculum-hero__title">Ready to Begin your learning?</h1>
+
+          <div class="curriculum-hero__actions">
+            <a class="btn btn--outline-light" href="#high-school-lab">High School Lab</a>
+            <a class="btn btn--outline-light" href="#undergrad-lab">Undergraduate Lab</a>
+            <!-- FAQ lives on the Home page; Contact lives on Support -->
+            <a class="btn btn--accent" href="index.html#faq">FAQ</a>
+            <a class="btn btn--accent" href="support.html">Contact Us</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. HIGH SCHOOL LAB — module roadmap
+         ============================================================ -->
+    <section class="section lab" id="high-school-lab">
+      <div class="container">
+
+        <h2 class="section-title lab__title">High<br>School Lab</h2>
+
+        <p class="lab__script" aria-hidden="true">One Health</p>
+
+        <!-- NOTE: module titles and descriptions are placeholders — the high
+             school roadmap content hasn't been supplied yet (README > Still open).
+             Structure mirrors the Undergrad Lab below, so swapping in real copy
+             is a text-only change. -->
+        <ol class="module-track">
+          <li class="module">
+            <h3 class="module__name">module 1</h3>
+            <p class="module__desc">Short description of the module from high school interns</p>
+          </li>
+          <li class="module">
+            <h3 class="module__name">module 2</h3>
+            <p class="module__desc">Short description of the module from high school interns</p>
+          </li>
+          <li class="module">
+            <h3 class="module__name">module 3</h3>
+            <p class="module__desc">Short description of the module from high school interns</p>
+          </li>
+          <li class="module">
+            <h3 class="module__name">module 4</h3>
+            <p class="module__desc">Short description of the module from high school interns</p>
+          </li>
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. ONE HEALTH ARCADE
+         Intentionally duplicated on interactive-center.html, which
+         gathers every interactive section in one place.
+         ============================================================ -->
+    <section class="section arcade" id="arcade">
+      <div class="container">
+
+        <h2 class="section-title">One Health Arcade</h2>
+        <p class="arcade__lede">Explore games you will be playing as you learn</p>
+
+        <div class="arcade__grid">
+
+          <article class="game">
+            <h3 class="game__title">Catch the Virus</h3>
+            <!-- TODO: replace with real game screenshot -> assets/images/ -->
+            <div class="game__figure media-placeholder media-placeholder--accent"
+                 role="img" aria-label="Placeholder for the Catch the Virus game screenshot">
+            </div>
+            <p class="game__desc">
+              Track and contain a rapidly mutating pathogen across human, animal,
+              and environmental populations before it triggers a global pandemic.
+            </p>
+            <!-- TODO: games don't exist yet — destination unresolved -->
+            <a class="btn btn--outline-dark" href="#">Play</a>
+          </article>
+
+          <article class="game">
+            <h3 class="game__title">Eco-System Rescue</h3>
+            <!-- TODO: replace with real game screenshot -> assets/images/ -->
+            <div class="game__figure media-placeholder media-placeholder--navy"
+                 role="img" aria-label="Placeholder for the Eco-System Rescue game screenshot">
+            </div>
+            <p class="game__desc">
+              Balance urban expansion, wildlife conservation, and agricultural needs
+              to prevent habitat disruption from driving wild diseases into nearby
+              communities.
+            </p>
+            <!-- TODO: games don't exist yet — destination unresolved -->
+            <a class="btn btn--accent" href="#">Play</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. CTA BAND — closes out the High School track
+         ============================================================ -->
+    <section class="section section--dark benefits" id="high-school-cta">
+      <div class="container">
+
+        <h2 class="benefits__title">
+          Step Outside the Classroom. Impact the <strong>World.</strong>
+        </h2>
+        <p class="benefits__lede">
+          Join a network of high school students tackling the biggest challenges in
+          human, animal, and environmental health.
+        </p>
+
+        <ul class="benefit-cards">
+          <li class="benefit-card">
+            <!-- TODO: replace with real icon -> assets/icons/ -->
+            <span class="benefit-card__icon" aria-hidden="true"></span>
+            <h3 class="benefit-card__title">Stand Out on College Applications:</h3>
+            <p class="benefit-card__desc">
+              Build a unique portfolio that highlights your commitment to global
+              health and STEM initiatives.
+            </p>
+          </li>
+          <li class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true"></span>
+            <h3 class="benefit-card__title">Connect with Mentors:</h3>
+            <p class="benefit-card__desc">
+              Network directly with university undergrads and working professionals
+              to explore future career paths.
+            </p>
+          </li>
+          <li class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true"></span>
+            <h3 class="benefit-card__title">Gain Hands-On Experience:</h3>
+            <p class="benefit-card__desc">
+              Move beyond textbooks and work on real-world case studies connecting
+              human, animal, and ecosystem health.
+            </p>
+          </li>
+        </ul>
+
+        <!-- Both point at this page's content rather than a sign-up form —
+             students should see the program before committing. -->
+        <div class="button-row button-row--center">
+          <a class="btn btn--outline-light" href="#high-school-lab">Join the High School Network</a>
+          <a class="btn btn--accent" href="#high-school-lab">Start Your One Health Journey</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. UNDERGRAD LAB — 5-step module roadmap
+         ============================================================ -->
+    <section class="section lab" id="undergrad-lab">
+      <div class="container">
+
+        <h2 class="section-title lab__title">UnderGrad<br>Lab</h2>
+
+        <p class="lab__script" aria-hidden="true">One Health</p>
+
+        <ol class="module-track">
+          <li class="module">
+            <h3 class="module__name">Intro to One Health</h3>
+            <p class="module__desc">
+              Explore how human, animal, and environmental health are connected, and
+              test your knowledge in an interactive disease outbreak simulation.
+            </p>
+          </li>
+          <li class="module">
+            <h3 class="module__name">Data, Dashboards, and Health Equity</h3>
+            <p class="module__desc">
+              Analyze interactive data dashboards to uncover hidden health inequities
+              and discover how AI can responsibly track disease outbreaks across
+              communities.
+            </p>
+          </li>
+          <li class="module">
+            <h3 class="module__name">Values &amp; Ethics</h3>
+            <p class="module__desc">
+              Analyze the social and ethical impacts of disease outbreaks by exploring
+              how communication, stigma, and misinformation shape community trust and
+              public health responses.
+            </p>
+          </li>
+          <li class="module">
+            <h3 class="module__name">Systems Thinking</h3>
+            <p class="module__desc">
+              Master systems thinking by mapping feedback loops, identifying leverage
+              points, and predicting unintended consequences in complex One Health
+              scenarios.
+            </p>
+          </li>
+          <li class="module module--capstone">
+            <h3 class="module__name">Capstone Project</h3>
+            <!-- TODO: no description in the wireframe — copy pending -->
+          </li>
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. CAREER ADVANTAGES — closes out the Undergrad track
+         ============================================================ -->
+    <section class="section section--dark benefits" id="career-advantages">
+      <div class="container">
+
+        <h2 class="benefits__title benefits__title--serif">
+          Career Advantages of One Health
+        </h2>
+        <hr class="benefits__rule">
+
+        <p class="benefits__quote">
+          Understanding how human, animal, and environmental systems connect gives
+          you a massive competitive advantage in the modern job market.
+        </p>
+
+        <ul class="benefit-cards">
+          <li class="benefit-card">
+            <!-- TODO: replace with real icon -> assets/icons/ -->
+            <span class="benefit-card__icon" aria-hidden="true"></span>
+            <h3 class="benefit-card__title">High Earning Potential:</h3>
+            <p class="benefit-card__desc">
+              Interdisciplinary roles in health data, epidemiology, and management
+              offer median salaries from $84,000 to $118,000 with rapid projected
+              growth.
+            </p>
+          </li>
+          <li class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true"></span>
+            <h3 class="benefit-card__title">Standout Resume:</h3>
+            <p class="benefit-card__desc">
+              Top employers across healthcare, consulting, and tech actively seek
+              graduates who can analyze complex systems and solve multifaceted
+              problems.
+            </p>
+          </li>
+          <li class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true"></span>
+            <h3 class="benefit-card__title">Workplace Readiness:</h3>
+            <p class="benefit-card__desc">
+              Training in cross-system logic makes it easier to communicate across
+              disciplines, lead diverse teams, and adapt to shifting industry
+              demands.
+            </p>
+          </li>
+        </ul>
+
+        <div class="button-row button-row--center">
+          <a class="btn btn--outline-light" href="#undergrad-lab">Join the Undergrad Network</a>
+          <a class="btn btn--accent" href="#undergrad-lab">Start Your One Health Journey</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       SITE FOOTER  (identical across all 4 pages)
+       ============================================================ -->
+  <footer class="site-footer section--dark">
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__brand">
+        <p class="site-footer__name">One Health Learning Labs</p>
+        <p class="site-footer__legal">
+          &copy; 2026 Illinois One Health Learning Labs Program. All rights reserved.
+        </p>
+      </div>
+
+      <!-- TODO: replace with real social icons -> assets/icons/ -->
+      <ul class="site-footer__social" aria-label="Social media">
+        <li><a href="#" class="media-placeholder media-placeholder--small"><span class="sr-only">Social link 1</span></a></li>
+        <li><a href="#" class="media-placeholder media-placeholder--small"><span class="sr-only">Social link 2</span></a></li>
+        <li><a href="#" class="media-placeholder media-placeholder--small"><span class="sr-only">Social link 3</span></a></li>
+      </ul>
+
+      <nav class="site-footer__links" aria-label="Footer">
+        <h2 class="site-footer__links-title">Links</h2>
+        <!-- Team / Faculty / Project don't exist on this site, so they point at
+             the live One Health Scholars site. Home and Contact Us stay internal
+             — we have our own versions of both. -->
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="https://gihri.github.io/one-health-scholars/team.html">Team</a></li>
+          <li><a href="https://gihri.github.io/one-health-scholars/faculty.html">Faculty</a></li>
+          <li><a href="https://gihri.github.io/one-health-scholars/project.html">Project</a></li>
+          <li><a href="support.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
