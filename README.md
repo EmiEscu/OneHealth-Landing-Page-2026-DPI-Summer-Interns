@@ -228,6 +228,7 @@ OneHealth-Landing-Page-2026-DPI-Summer-Interns/
 - **High School roadmap content** — not yet supplied by the program team; `index.html` and `curriculum.html` both carry a visual placeholder until it exists.
 - **Brand assets** — logo, section photography, dashboard map visual, and the three footer social icons are all placeholders pending real files in `assets/`.
 - **Breakpoint values** — see [Design → Breakpoints](#design); `styles.css` currently uses a provisional 900px.
+- **Formspree form ID** — `support.html`'s contact form posts to a placeholder endpoint (`https://formspree.io/f/YOUR_FORM_ID`); swap in the real form ID once the team creates one at [formspree.io](https://formspree.io).
 
 ### Where things go
 
