@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Center | One Health Learning Lab</title>
+  <meta name="description" content="Explore real-world health data dashboards and simulation games covering human, animal, and environmental health.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Newsreader (headings) + Inter (body) — see README > Design Tokens -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================================================
+       SITE HEADER / NAV  (identical across all 4 pages —
+       only aria-current changes)
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+
+      <a class="brand" href="index.html">
+        <!-- TODO: replace with real logo from assets/icons/ once provided -->
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__name">One Health Learning Lab</span>
+          <span class="brand__org">University of Illinois</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="primary-nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="curriculum.html">Curriculum Modules</a></li>
+          <li><a href="interactive-center.html" aria-current="page">Interactive Center</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         1. HERO — "The Interactive Center"
+         ============================================================ -->
+    <section class="ic-hero section--dark" id="hero">
+      <div class="container">
+        <h1 class="ic-hero__title">
+          The <em class="ic-hero__title-accent">Interactive</em><br>Center
+        </h1>
+        <p class="ic-hero__lede">
+          Explore real-world health data and put your decision-making skills to
+          the test. Analyze how human, animal, and environmental systems connect
+          before jumping into our simulation challenges.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. LIVE DASHBOARDS
+         Tabs follow the ARIA tabs pattern; switching logic lives in
+         js/main.js. Without JS all three panels stay visible, so the
+         content is still reachable.
+         ============================================================ -->
+    <section class="section" id="live-dashboards">
+      <div class="container">
+
+        <h2 class="section-title">Live Dashboards</h2>
+
+        <div class="dashboard">
+
+          <p class="dashboard__label">Disease</p>
+
+          <div class="dashboard__tablist" role="tablist" aria-label="Disease data source">
+            <button class="dashboard__tab" type="button" role="tab"
+                    id="tab-human" aria-controls="panel-human" aria-selected="true">
+              Human Outbreak
+            </button>
+            <button class="dashboard__tab" type="button" role="tab"
+                    id="tab-animal" aria-controls="panel-animal" aria-selected="false" tabindex="-1">
+              Animal Recorded Cases
+            </button>
+            <button class="dashboard__tab" type="button" role="tab"
+                    id="tab-environment" aria-controls="panel-environment" aria-selected="false" tabindex="-1">
+              Environmental Records
+            </button>
+          </div>
+
+          <!-- TODO: each panel is a placeholder until the real data visual
+               lands in assets/images/ (README > Still open). -->
+          <div class="dashboard__panel" role="tabpanel" id="panel-human" aria-labelledby="tab-human">
+            <div class="dashboard__figure media-placeholder media-placeholder--dark"
+                 role="img" aria-label="Placeholder for the human outbreak data map"></div>
+          </div>
+
+          <div class="dashboard__panel" role="tabpanel" id="panel-animal" aria-labelledby="tab-animal">
+            <div class="dashboard__figure media-placeholder media-placeholder--dark"
+                 role="img" aria-label="Placeholder for the animal recorded cases data map"></div>
+          </div>
+
+          <div class="dashboard__panel" role="tabpanel" id="panel-environment" aria-labelledby="tab-environment">
+            <div class="dashboard__figure media-placeholder media-placeholder--dark"
+                 role="img" aria-label="Placeholder for the environmental records data map"></div>
+          </div>
+
+          <!-- TODO: the wireframe puts an "Explore Interactive Center" button
+               here, but this IS the Interactive Center — a self-link. Pointed at
+               the Arcade below as the sensible next step on this page. Confirm
+               whether it should be relabelled or dropped entirely. -->
+          <a class="btn btn--accent dashboard__cta" href="#arcade">
+            Explore the Arcade
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. ONE HEALTH ARCADE
+         Intentionally the same section as on curriculum.html — this page
+         gathers every interactive part of the site in one place
+         (README > Resolved decisions #1). Shares the .arcade / .game
+         styles rather than redefining them.
+         ============================================================ -->
+    <section class="section arcade" id="arcade">
+      <div class="container">
+
+        <h2 class="section-title">One Health Arcade</h2>
+        <p class="arcade__lede">Explore games you will be playing as you learn</p>
+
+        <div class="arcade__grid">
+
+          <article class="game">
+            <h3 class="game__title">Catch the Virus</h3>
+            <!-- TODO: replace with real game screenshot -> assets/images/ -->
+            <div class="game__figure media-placeholder media-placeholder--accent"
+                 role="img" aria-label="Placeholder for the Catch the Virus game screenshot">
+            </div>
+            <p class="game__desc">
+              Track and contain a rapidly mutating pathogen across human, animal,
+              and environmental populations before it triggers a global pandemic.
+            </p>
+            <!-- TODO: games don't exist yet — destination unresolved -->
+            <a class="btn btn--outline-dark" href="#">Play</a>
+          </article>
+
+          <article class="game">
+            <h3 class="game__title">Eco-System Rescue</h3>
+            <!-- TODO: replace with real game screenshot -> assets/images/ -->
+            <div class="game__figure media-placeholder media-placeholder--navy"
+                 role="img" aria-label="Placeholder for the Eco-System Rescue game screenshot">
+            </div>
+            <p class="game__desc">
+              Balance urban expansion, wildlife conservation, and agricultural needs
+              to prevent habitat disruption from driving wild diseases into nearby
+              communities.
+            </p>
+            <!-- TODO: games don't exist yet — destination unresolved -->
+            <a class="btn btn--accent" href="#">Play</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       SITE FOOTER  (identical across all 4 pages)
+       ============================================================ -->
+  <footer class="site-footer section--dark">
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__brand">
+        <p class="site-footer__name">One Health Learning Labs</p>
+        <p class="site-footer__legal">
+          &copy; 2026 Illinois One Health Learning Labs Program. All rights reserved.
+        </p>
+      </div>
+
+      <!-- TODO: replace with real social icons -> assets/icons/ -->
+      <ul class="site-footer__social" aria-label="Social media">
+        <li><a href="#" class="media-placeholder media-placeholder--small"><span class="sr-only">Social link 1</span></a></li>
+        <li><a href="#" class="media-placeholder media-placeholder--small"><span class="sr-only">Social link 2</span></a></li>
+        <li><a href="#" class="media-placeholder media-placeholder--small"><span class="sr-only">Social link 3</span></a></li>
+      </ul>
+
+      <nav class="site-footer__links" aria-label="Footer">
+        <h2 class="site-footer__links-title">Links</h2>
+        <!-- Team / Faculty / Project don't exist on this site, so they point at
+             the live One Health Scholars site. Home and Contact Us stay internal
+             — we have our own versions of both. -->
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="https://gihri.github.io/one-health-scholars/team.html">Team</a></li>
+          <li><a href="https://gihri.github.io/one-health-scholars/faculty.html">Faculty</a></li>
+          <li><a href="https://gihri.github.io/one-health-scholars/project.html">Project</a></li>
+          <li><a href="support.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
