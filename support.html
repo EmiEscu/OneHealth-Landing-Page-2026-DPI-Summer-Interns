@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support | One Health Learning Lab</title>
+  <meta name="description" content="Have questions about the One Health program? Check our FAQ or reach out to the team directly.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Newsreader (headings) + Inter (body) — see README > Design Tokens -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================================================
+       SITE HEADER / NAV  (identical across all 4 pages —
+       only aria-current changes)
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+
+      <a class="brand" href="index.html">
+        <!-- TODO: replace with real logo from assets/icons/ once provided -->
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__name">One Health Learning Lab</span>
+          <span class="brand__org">University of Illinois</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="primary-nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="curriculum.html">Curriculum Modules</a></li>
+          <li><a href="interactive-center.html">Interactive Center</a></li>
+          <li><a href="support.html" aria-current="page">Support</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         1. HERO — "Have Any Questions?" + contact form
+         Two-column layout: lede/FAQ link on the left, form card on the
+         right, matching docs/DPI-SupportPage-OneHealthWireFrame.png.
+         ============================================================ -->
+    <section class="support-hero section--dark" id="hero">
+      <div class="container support-hero__inner">
+
+        <div class="support-hero__content">
+          <h1 class="support-hero__title">
+            Have <em class="support-hero__title-accent">Any</em> Questions?
+          </h1>
+          <p class="support-hero__lede">
+            Reach out via the form below, and our team will get back to you
+            shortly. Save time by checking our FAQ section first, your
+            answer might already be waiting for you!
+          </p>
+          <a class="btn btn--accent" href="#faq">FAQ</a>
+        </div>
+
+        <!-- ---- Contact form ----
+             Formspree endpoint is a placeholder — swap YOUR_FORM_ID for the
+             real one once the team creates a Formspree form (see README > Tech Stack). -->
+        <form class="support-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+          <div class="support-form__field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Value" required>
+          </div>
+
+          <div class="support-form__field">
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" name="surname" placeholder="Value" required>
+          </div>
+
+          <div class="support-form__field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Value" required>
+          </div>
+
+          <div class="support-form__field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Value" required></textarea>
+          </div>
+
+          <button class="btn btn--accent support-form__submit" type="submit">Submit</button>
+
+        </form>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. FAQ
+         Same accessible <details>/<summary> accordion pattern used on
+         index.html — reused here as the Support page's dedicated FAQ.
+         ============================================================ -->
+    <section class="section faq" id="faq">
+      <div class="container">
+
+        <h2 class="section-title">FAQ</h2>
+
+        <div class="faq__list">
+
+          <details class="faq__item" open>
+            <summary class="faq__question">Who is the intended audience?</summary>
+            <div class="faq__answer">
+              <!-- TODO: real answer copy pending -> docs/content/ -->
+              <p>
+                High school and undergraduate students interested in how human,
+                animal, and environmental health connect — plus the educators and
+                mentors supporting them.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">What exactly will I learn in this program?</summary>
+            <div class="faq__answer">
+              <!-- TODO: real answer copy pending -> docs/content/ -->
+              <p>
+                See the <a href="curriculum.html">Curriculum Modules</a> page for the
+                full roadmap of each track.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">How do I sign up for the program?</summary>
+            <div class="faq__answer">
+              <!-- TODO: real answer copy pending -> docs/content/ -->
+              <p>
+                Visit the <a href="curriculum.html">Curriculum Modules</a> page and
+                use the "Join the High School Network" or "Start Your One Health
+                Journey" button at the end of your track's section.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">How are interactive games used?</summary>
+            <div class="faq__answer">
+              <ul class="faq__bullets">
+                <li>
+                  <strong>Live Data Dashboard:</strong>
+                  Track real-time disease surveillance.
+                </li>
+                <li>
+                  <strong>Outbreak Simulations:</strong>
+                  Act as an epidemiologist making active containment tradeoffs.
+                </li>
+                <li>
+                  <strong>Resource Games:</strong>
+                  Strategize and allocate budgets to prevent the next global pandemic.
+                </li>
+              </ul>
+              <p class="faq__flourish">
+                Real data. Real simulations. <strong>Real solutions.</strong>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">Didn't find your answer?</summary>
+            <div class="faq__answer">
+              <p>
+                Use the contact form at the top of this page — our team will get
+                back to you shortly.
+              </p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       SITE FOOTER  (shared across all 4 pages)
+       ============================================================ -->
+  <footer class="site-footer section--dark">
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__brand">
+        <p class="site-footer__name">One Health Learning Labs</p>
+        <p class="site-footer__legal">
+          &copy; 2026 Illinois One Health Learning Labs Program. All rights reserved.
+        </p>
+      </div>
+
+      <!-- TODO: replace with real social icons -> assets/icons/ -->
+      <ul class="site-footer__social" aria-label="Social media">
+        <li><a href="#" class="media-placeholder media-placeholder--small"><span class="sr-only">Social link 1</span></a></li>
+        <li><a href="#" class="media-placeholder media-placeholder--small"><span class="sr-only">Social link 2</span></a></li>
+        <li><a href="#" class="media-placeholder media-placeholder--small"><span class="sr-only">Social link 3</span></a></li>
+      </ul>
+
+      <nav class="site-footer__links" aria-label="Footer">
+        <h2 class="site-footer__links-title">Links</h2>
+        <!-- Team / Faculty / Project don't exist on this site, so they point at
+             the live One Health Scholars site. Home and Contact Us stay internal
+             — we have our own versions of both. -->
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="https://gihri.github.io/one-health-scholars/team.html">Team</a></li>
+          <li><a href="https://gihri.github.io/one-health-scholars/faculty.html">Faculty</a></li>
+          <li><a href="https://gihri.github.io/one-health-scholars/project.html">Project</a></li>
+          <li><a href="support.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

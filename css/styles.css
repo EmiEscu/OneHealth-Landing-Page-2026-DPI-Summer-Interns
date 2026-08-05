@@ -885,6 +885,79 @@ a { color: inherit; }
   white-space: nowrap;
 }
 
+/* ============================================================
+   SUPPORT PAGE
+   ============================================================ */
+
+/* ---------- Support hero + contact form ---------- */
+
+.support-hero {
+  padding-block: clamp(3rem, 9vw, 6.5rem);
+}
+
+.support-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.support-hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 2rem;
+}
+.support-hero__title-accent {
+  color: var(--color-accent);
+  font-style: normal; /* <em> is for emphasis here, not italics */
+}
+
+.support-hero__lede {
+  font-size: 1.125rem;
+  max-width: 38ch;
+  margin-bottom: 2.5rem;
+}
+
+.support-form {
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.support-form__field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.support-form__field label {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.support-form__field input,
+.support-form__field textarea {
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+.support-form__field input::placeholder,
+.support-form__field textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.support-form__field textarea { resize: vertical; }
+
+.support-form__submit {
+  width: 100%;
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+}
+
 /* ---------- Responsive ----------
    TODO: breakpoint values are placeholders — the README's Design > Breakpoints
    table is still blank. Confirm against Figma and keep the two in sync. */
@@ -893,6 +966,7 @@ a { color: inherit; }
   .hero__inner,
   .about__inner,
   .roadmaps__grid,
+  .support-hero__inner,
   .site-footer__inner {
     grid-template-columns: 1fr;
   }
