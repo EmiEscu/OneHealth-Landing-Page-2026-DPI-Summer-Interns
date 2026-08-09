@@ -2,9 +2,9 @@
 
 The public landing page for the DPI One Health program — introducing One Health to K-12 students, undergraduates, and educators, and routing each audience to the right program.
 
-**Status:** 🚧 In development
+**Status:** Deployed (Demo)
 
-**Live site:** Not yet deployed
+**Live site:** https://emiescu.github.io/OneHealth-Landing-Page-2026-DPI-Summer-Interns/
 
 **Design file:** https://www.figma.com/design/CuN1XZpOwCQJgZieCWlcyg/Wireframe-for-One-Health?node-id=49-293&t=774BgJfIDF0duMvz-1 
 
