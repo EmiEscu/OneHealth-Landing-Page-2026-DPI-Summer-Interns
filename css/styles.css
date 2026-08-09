@@ -604,29 +604,59 @@ a { color: inherit; }
 }
 
 /* ---------- Module roadmap ----------
-   NOTE: the Figma shows these connected by a hand-drawn winding curve.
-   This is a simplified zigzag — modules alternate sides — which reads the
-   same way without an SVG path. Revisit if the curve is essential. */
+   Modules alternate between two columns and are joined by curved SVG
+   connectors (.module__link), echoing the winding path in the Figma.
 
+   The connectors are per-module rather than one big background SVG on
+   purpose: each one lives in the row gap directly beneath its own box, so
+   the curve stays attached no matter how many lines a description wraps to
+   or how wide the viewport is. */
+
+/* One module per row, each offset horizontally to one of the positions in
+   the Figma frame. Percentages below are measured from that frame: the
+   module is the width of the description text (28.2% of the container) and
+   the orange box is 68.6% of that, centred. Keep the two in sync if either
+   is retuned. */
+/* row-gap gives each connector a band of empty space below the description
+   to cross in. Without it the curves have to travel sideways while still
+   level with the text and cut straight through it — the Figma gets away
+   with almost no gap only because its descriptions are two lines, whereas
+   the real copy runs to four or five. */
 .module-track {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 2.5rem;
+  row-gap: 3rem;
 }
 
-.module { max-width: 34rem; }
-.module:nth-child(even) { margin-left: auto; text-align: right; }
+.module {
+  position: relative;
+  width: 28.2%;
+  text-align: center;
+}
+
+/* The four designed horizontal positions. The undergrad track adds a fifth
+   for the Capstone. */
+.module--pos-1 { margin-left: 15.7%; }
+.module--pos-2 { margin-left: 56.7%; }
+.module--pos-3 { margin-left: 26%; }
+.module--pos-4 { margin-left: 61.2%; }
+.module--pos-5 { margin-left: 35.9%; }
 
 .module__name {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68.6%;
+  min-height: 5.5rem;
+  margin: 0 auto 1rem;
+  padding: 0.75rem 1rem;
   background: var(--color-accent);
   color: var(--color-text-inverse);
   font-style: italic;
-  font-size: 1.125rem;
-  padding: 0.85rem 2rem;
-  margin: 0 0 0.85rem;
+  font-size: 1.25rem;
+  text-align: center;
 }
 
 .module__desc { margin: 0; }
@@ -634,6 +664,87 @@ a { color: inherit; }
 .module--capstone .module__name::before {
   content: "\2605"; /* ★ */
   margin-right: 0.5rem;
+}
+
+/* ---------- Module connectors ----------
+   Each connector is absolutely positioned relative to its own module and
+   sized so it starts at that module's box edge and lands on the next
+   module's box edge. The left/width values are the measured distances
+   between those two boxes, expressed as a fraction of the module width —
+   so they differ per segment and are not interchangeable.
+
+   preserveAspectRatio="none" lets each curve stretch to whatever vertical
+   gap it ends up spanning; non-scaling-stroke keeps the line an even 2px
+   while that happens. */
+/* Base connector: spans from the middle of this module's box (2.75rem = half
+   the 5.5rem box) down to the middle of the next module's box — the module's
+   own height plus the 3rem row gap. Segments that anchor somewhere other
+   than mid-edge (seg-0, 2, 3, 4) override top/height below.
+
+   All left/width values are measured from the Figma frame and expressed in
+   module-width units, anchoring each endpoint on a specific box edge:
+     box within a module spans 15.7% .. 84.3% of the module's width. */
+.module__link {
+  position: absolute;
+  top: 2.75rem; /* vertical middle of the box above */
+  height: calc(100% + 3rem);
+  overflow: visible;
+  color: var(--color-accent);
+  pointer-events: none;
+}
+.module__link path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+/* script → 1: the swash from the "One Health" script sweeping left and
+   curling down onto module 1's top edge */
+.module__link--seg-0 {
+  left: 45%;
+  width: 101%;
+  top: -3rem;
+  height: 3rem;
+}
+
+/* 1 → 2: leaves box 1's right edge mid-height, descends diagonally, and
+   arrives horizontally into box 2's left edge mid-height */
+.module__link--seg-1 { left: 84.3%; width: 76.8%; }
+
+/* 2 → 3: leaves box 2's TOP edge near the right corner, rises into the wide
+   loop out past the right, then sweeps back down-left below the description
+   to land on box 3's right edge mid-height */
+.module__link--seg-2 {
+  left: -24.6%;
+  width: 154.4%;
+  top: 0; /* anchored to the box top, not mid */
+  height: calc(100% + 5.75rem);
+}
+
+/* 3 → 4: leaves box 3's left edge, bows out low past the description
+   (dipping below box 4's bottom), then rises to land on box 4's left edge
+   near its bottom corner */
+.module__link--seg-3 {
+  left: -47%;
+  width: 187.5%;
+  height: calc(100% + 5.25rem);
+}
+
+/* Undergrad variant of seg-3: ends at the next box's left edge MID height
+   with no dip below it, so it stays clear of seg-4 (which the high school
+   track doesn't have — its seg-3 keeps the deeper dip) */
+.module__link--seg-3-mid { height: calc(100% + 3rem); }
+
+/* 4 → 5 (undergrad only): leaves box 4's left edge at 90% of its height —
+   comfortably below seg-3's mid-height arrival, so the two never cross —
+   bows out past the description's left edge, and lands on the Capstone
+   box's top-right corner */
+.module__link--seg-4 {
+  left: -24%;
+  width: 39.7%;
+  top: 4.95rem; /* 90% down the 5.5rem box */
+  height: calc(100% - 1.95rem);
 }
 
 /* ---------- One Health Arcade ---------- */
@@ -966,11 +1077,26 @@ a { color: inherit; }
     padding-top: 3rem;
   }
 
-  /* Zigzag collapses to a single left-aligned column on narrow screens */
-  .module:nth-child(even) {
+  /* Single column on narrow screens: every module left-aligned, and the
+     connectors become a gentle centred curve instead of alternating. */
+  /* Narrow screens: the weaving layout has nowhere to weave, so modules
+     stack full width and the connectors are dropped entirely — a stretched
+     curve across a 1-column stack reads as a stray line, not a path. */
+  .module-track { row-gap: 2.5rem; }
+
+  .module,
+  .module--pos-1,
+  .module--pos-2,
+  .module--pos-3,
+  .module--pos-4,
+  .module--pos-5 {
+    width: 100%;
     margin-left: 0;
-    text-align: left;
   }
+
+  .module__name { width: 100%; }
+
+  .module__link { display: none; }
 
   .nav-toggle { display: block; }
 
