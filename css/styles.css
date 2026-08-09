@@ -477,38 +477,6 @@ a { color: inherit; }
   margin: 0;
 }
 
-/* ---------- Community impact ---------- */
-
-.impact__inner { text-align: center; }
-
-.impact__rule {
-  width: 200px;
-  border: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  margin: 1rem auto 2rem;
-}
-
-.impact__title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  margin-bottom: 1.5rem;
-}
-
-.impact__lede {
-  font-style: italic;
-  max-width: 46ch;
-  margin: 0 auto 2.5rem;
-}
-
-/* Columns must be wide enough for "Meet the Health Departments" to sit on one
-   line — if it wraps, grid stretches the whole row and the neighbouring button
-   grows to match. Wider column gap matches the Figma. */
-.impact__actions {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 300px));
-  gap: 1rem 5rem;
-  justify-content: center;
-}
-
 /* ---------- Footer ---------- */
 
 .site-footer { padding-block: 3rem; }
@@ -977,8 +945,6 @@ a { color: inherit; }
     border-top: 2px solid var(--color-primary);
     padding-top: 3rem;
   }
-
-  .impact__actions { grid-template-columns: 1fr; }
 
   /* --- Curriculum page --- */
 
