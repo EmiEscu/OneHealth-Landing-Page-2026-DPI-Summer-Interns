@@ -96,20 +96,48 @@
              school roadmap content hasn't been supplied yet (README > Still open).
              Structure mirrors the Undergrad Lab below, so swapping in real copy
              is a text-only change. -->
+        <!-- Each module sits at one of four designed horizontal positions
+             (.module--pos-N, measured from the Figma frame), with its
+             description centred beneath the box.
+
+             The .module__link SVGs are the connectors. Each one is shaped for
+             its specific segment — segment 2 makes the wide loop out to the
+             right, segment 3 dips left before crossing — so they are NOT
+             interchangeable. They are decorative (the <ol> already conveys
+             order to assistive tech), hence aria-hidden. The final module in
+             a track has no connector. -->
         <ol class="module-track">
-          <li class="module">
+          <li class="module module--pos-1">
             <h3 class="module__name">module 1</h3>
             <p class="module__desc">Short description of the module from high school interns</p>
+            <!-- seg-0: the swash flowing from the "One Health" script above
+                 down onto this box's top edge, as in the Figma -->
+            <svg class="module__link module__link--seg-0" viewBox="0 0 100 100"
+                 preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M100,10 C72,22 42,6 24,22 C8,36 2,68 0,100" />
+            </svg>
+            <svg class="module__link module__link--seg-1" viewBox="0 0 100 100"
+                 preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M0,0 C30,45 55,100 100,100" />
+            </svg>
           </li>
-          <li class="module">
+          <li class="module module--pos-2">
             <h3 class="module__name">module 2</h3>
             <p class="module__desc">Short description of the module from high school interns</p>
+            <svg class="module__link module__link--seg-2" viewBox="0 0 100 100"
+                 preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M70,0 C88,-8 102,8 100,36 C98,62 75,80 40,90 C25,94 10,97 0,100" />
+            </svg>
           </li>
-          <li class="module">
+          <li class="module module--pos-3">
             <h3 class="module__name">module 3</h3>
             <p class="module__desc">Short description of the module from high school interns</p>
+            <svg class="module__link module__link--seg-3" viewBox="0 0 100 100"
+                 preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M33.4,0 C18,8 4,22 2,48 C0,80 12,110 45,118 C70,124 92,112 100,100" />
+            </svg>
           </li>
-          <li class="module">
+          <li class="module module--pos-4">
             <h3 class="module__name">module 4</h3>
             <p class="module__desc">Short description of the module from high school interns</p>
           </li>
@@ -227,38 +255,68 @@
         <p class="lab__script" aria-hidden="true">One Health</p>
 
         <ol class="module-track">
-          <li class="module">
+          <li class="module module--pos-1">
             <h3 class="module__name">Intro to One Health</h3>
             <p class="module__desc">
               Explore how human, animal, and environmental health are connected, and
               test your knowledge in an interactive disease outbreak simulation.
             </p>
+            <!-- seg-0: the swash flowing from the "One Health" script above
+                 down onto this box's top edge, as in the Figma -->
+            <svg class="module__link module__link--seg-0" viewBox="0 0 100 100"
+                 preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M100,10 C72,22 42,6 24,22 C8,36 2,68 0,100" />
+            </svg>
+            <svg class="module__link module__link--seg-1" viewBox="0 0 100 100"
+                 preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M0,0 C30,45 55,100 100,100" />
+            </svg>
           </li>
-          <li class="module">
+          <li class="module module--pos-2">
             <h3 class="module__name">Data, Dashboards, and Health Equity</h3>
             <p class="module__desc">
               Analyze interactive data dashboards to uncover hidden health inequities
               and discover how AI can responsibly track disease outbreaks across
               communities.
             </p>
+            <svg class="module__link module__link--seg-2" viewBox="0 0 100 100"
+                 preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M70,0 C88,-8 102,8 100,36 C98,62 75,80 40,90 C25,94 10,97 0,100" />
+            </svg>
           </li>
-          <li class="module">
+          <li class="module module--pos-3">
             <h3 class="module__name">Values &amp; Ethics</h3>
             <p class="module__desc">
               Analyze the social and ethical impacts of disease outbreaks by exploring
               how communication, stigma, and misinformation shape community trust and
               public health responses.
             </p>
+            <!-- Undergrad variant of seg-3: arrives at Systems Thinking's left
+                 edge at MID height with no dip below the box, so it cannot
+                 tangle with seg-4, which departs from the box's bottom edge.
+                 (The high school seg-3 keeps the deeper Figma dip — its track
+                 ends at module 4, so there is no seg-4 to collide with.) -->
+            <svg class="module__link module__link--seg-3 module__link--seg-3-mid" viewBox="0 0 100 100"
+                 preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M33.4,0 C18,8 4,22 2,48 C0,75 12,92 45,96 C70,99 90,100 100,100" />
+            </svg>
           </li>
-          <li class="module">
+          <li class="module module--pos-4">
             <h3 class="module__name">Systems Thinking</h3>
             <p class="module__desc">
               Master systems thinking by mapping feedback loops, identifying leverage
               points, and predicting unintended consequences in complex One Health
               scenarios.
             </p>
+            <!-- Departs low on this box's left edge — below seg-3's mid-height
+                 arrival, so the two never cross — then bows out past the
+                 description's left edge before curling onto the Capstone box. -->
+            <svg class="module__link module__link--seg-4" viewBox="0 0 100 100"
+                 preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M100,0 C65,12 42,35 44,65 C45,80 46,92 47,100" />
+            </svg>
           </li>
-          <li class="module module--capstone">
+          <li class="module module--pos-5 module--capstone">
             <h3 class="module__name">Capstone Project</h3>
             <!-- TODO: no description in the wireframe — copy pending -->
           </li>
