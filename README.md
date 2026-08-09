@@ -198,7 +198,7 @@ OneHealth-Landing-Page-2026-DPI-Summer-Interns/
 
 | Page | Sections |
 |---|---|
-| `index.html` (Home) | Hero ("Mission & Vision"), About Us (Breaking Down Silos / Proactive Prevention / Interactive Mastery), "One Health in Everyday Life" (dashboard teaser → links to Interactive Center), Current Roadmaps (K-12 vs. Undergrad teaser comparison — links into `curriculum.html`), CTA band ("Three kinds of health. One unified framework."), FAQ (accordion), Community Impact (Meet the Scholars / Faculty / Health Departments / Partner with Us), Footer |
+| `index.html` (Home) | Hero ("Mission & Vision"), About Us (Breaking Down Silos / Proactive Prevention / Interactive Mastery), "One Health in Everyday Life" (dashboard teaser → links to Interactive Center), Current Roadmaps (K-12 vs. Undergrad teaser comparison — links into `curriculum.html`), CTA band ("Three kinds of health. One unified framework."), FAQ (accordion), Footer |
 | `curriculum.html` (Curriculum Modules) | Hero ("Ready to Begin your learning?" — quick-nav buttons to High School Lab / Undergraduate Lab / FAQ / Contact Us), High School Lab (module roadmap 1-4 + descriptions), One Health Arcade (Catch the Virus / Eco-System Rescue games — **also appears on Interactive Center, see open question below**), CTA band ("Step Outside the Classroom. Impact the World."), Undergrad Lab (5-step roadmap: Intro to One Health → Data/Dashboards/Health Equity → Values & Ethics → Systems Thinking → Capstone Project), Career Advantages of One Health (High Earning Potential / Standout Resume / Workplace Readiness), Footer |
 | `interactive-center.html` (Interactive Center) | Hero ("The Interactive Center"), Live Dashboards (Human Outbreak / Animal Recorded Cases / Environmental Records tabs), One Health Arcade (same games as `curriculum.html`), Footer |
 | `support.html` (Support) | Hero ("Have Any Questions?" + FAQ button), Contact form (Name, Surname, Email, Message, Submit) |
@@ -215,13 +215,10 @@ OneHealth-Landing-Page-2026-DPI-Summer-Interns/
    | Footer → Project | `.../project.html` |
    | Footer → Home | `index.html` (this site) |
    | Footer → Contact Us | `support.html` (this site) |
-   | Meet the Scholars | `.../students.html` ("Student Ambassadors," 2026 cohort) |
-   | Meet the Faculty | `.../faculty.html` |
-   | Meet the Health Departments | `.../lhd.html` ("Partner Health Departments") |
-   | Partner with Us | `.../contact.html` — ⚠️ best guess, no dedicated partner page exists; confirm |
 
 3. **Registration CTAs point to `curriculum.html`, not a sign-up form.** "Start Learning," "Join the High School Network," and "Join the Undergrad Network" all route to the curriculum so prospective students understand the program before committing. The external registration portal is still out of scope for this repo.
 4. **Filenames confirmed:** `index.html`, `curriculum.html`, `interactive-center.html`, `support.html` — matching the nav labels shown in the address bar.
+5. **The Community Impact section was removed from `index.html`.** It held "Meet the Scholars / Meet the Faculty / Meet the Health Departments / Partner with Us," all of which linked out to pages the main One Health Scholars site already hosts. Per manager direction, this site should not duplicate content that lives on the main site. Do not re-add it — link out from the footer instead. Note that this section does still appear in the Figma wireframe, which now intentionally differs from the build.
 
 ### Still open
 
@@ -297,7 +294,7 @@ The Curriculum Modules page shows a **roadmap and module descriptions only** —
 
 | Page | Sections | Owner | Status |
 |---|---|---|---|
-| `index.html` (Home) | Hero, About Us, "One Health in Everyday Life," Current Roadmaps, CTA band, FAQ, Community Impact, Footer | Emiliano | Draft |
+| `index.html` (Home) | Hero, About Us, "One Health in Everyday Life," Current Roadmaps, CTA band, FAQ, Footer | Emiliano | Draft |
 | `curriculum.html` (Curriculum Modules) | Hero, High School Lab, One Health Arcade, CTA band, Undergrad Lab, Career Advantages, Footer | Emiliano | Draft |
 | `interactive-center.html` (Interactive Center) | Hero, Live Dashboards, One Health Arcade, Footer | Emiliano | Draft |
 | `support.html` (Support) | Hero, Contact form | Emiliano | Draft |
